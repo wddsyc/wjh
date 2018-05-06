@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查询水费</title>
+    <style>
+        body {
+            background: url("./water.png");
+            background-position-x: center;
+            background-position-y: 339px;
+            background-repeat: no-repeat;
+        }
+
+        .timeQj {
+            display: flex;
+            margin: 20px;
+            justify-content: space-between;
+        }
+
+        input {
+            width: 60vw;
+        }
+
+        button {
+            font-size: 20px;
+            font-weight: 600;
+            display: block;
+            line-height: 2;
+            width: 70vw;
+            border-radius: 4px;
+            color: #655858;
+            background: white;
+            position: absolute;
+            bottom: 80px;
+            left: 50vw;
+            transform: translateX(-50%);
+            box-shadow: 0 0 2px 1px black;
+        }
+
+        .full {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgb(114, 114, 114);
+            color: white;
+        }
+
+        .apear {
+            display: block;
+        }
+
+        .msg {
+            position: absolute;
+            top: 5vw;
+            left: 5vw;
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            right: 5vw;
+            top: -5vw;
+            font-size: 30px;
+            border: 1px solid;
+            height: 13vw;
+            width: 13vw;
+            display: flex;
+            justify-content: center;
+            border-radius: 4px;
+            border-bottom-style: ridge;
+        }
+
+        .toindex {
+            height: 15vw;
+            width: 15vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 12px;
+            box-shadow: 0px 3px 3px 0px black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>非凡汽车生活馆</h1>
+        <hr>
+        <div class="timeQj">
+            <p>起始时间</p>
+            <input type="month" name="" id="startTime">
+        </div>
+        <div class="timeQj">
+            <p>截止时间</p>
+            <input type="month" name="" id="endTime">
+        </div>
+        <button>查询</button>
+        <!-- <div class="toindex"><a href="./index.html">首页</a> </div> -->
+    </div>
+    <div class="full">
+        <div class="msg">
+            <div class="time"></div>
+            <div class="close">x</div>
+            <hr>
+            <elecmsg></elecmsg>
+        </div>
+    </div>
+
+</body>
+<script>
+    let btn = document.querySelector('button')
+    let full = document.querySelector(`.full`)
+    let time = document.querySelector(`.time`)
+    let close = document.querySelector(`.close`)
+    /*选取HTML元素*/
+    btn.addEventListener(`click`, apear)
+    close.addEventListener(`click`, hide)
+    /*添加事件*/
+    function apear() { //弹出的方法
+        if (startTime.value !== "" && endTime.value !== "") {
+            full.classList.add(`apear`)
+            time.innerHTML = `${startTime.value}~${endTime.value}`
+        }
+    }
+
+    function hide() { //隐藏的方法
+        full.classList.remove(`apear`)
+    }
+</script>
+
+</html>

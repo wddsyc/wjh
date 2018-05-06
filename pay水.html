@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>缴纳水费</title>
+    <style>
+        body {
+            background: url("./water.png");
+            background-position-x: center;
+            background-position-y: 340px;
+            background-repeat: no-repeat;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            background: white;
+        }
+
+        table,
+        td,
+        th {
+            border: solid 1px;
+        }
+
+        td,
+        th {
+            line-height: 2;
+        }
+
+        td {
+            padding-left: 10px;
+        }
+
+        table {
+            width: 80vw;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        .summsg {
+            height: 30vw;
+            width: 70vw;
+            margin: 20px auto;
+            background: white;
+            border-radius: 6px;
+            border: 1px rgba(97, 97, 97, 0.842) solid;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .summsg p {
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
+        .summsg p.sumrmb {
+            font-weight: bolder;
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        p.who {
+            border-top: dashed 1px;
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        button {
+            display: block;
+            line-height: 3;
+            margin: 10px auto;
+            width: 70vw;
+            border-radius: 4px;
+            color: white;
+            background: #12d673;
+        }
+
+        .toindex {
+            height: 15vw;
+            width: 15vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 12px;
+            box-shadow: 0px 3px 3px 0px black;
+        }
+
+        .full {
+            display: none;
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .full.appear {
+            display: block;
+        }
+
+        .full .bk {
+            height: 100%;
+        }
+
+        .full .model {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .full .model .header {
+            padding: 0 8px;
+            line-height: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .full .model .content {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .full .model .content p {
+            margin: 20px 8px;
+        }
+
+        .full .model .footer {
+            padding: 12px 8px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .full .model .footer span:first-child {
+            cursor: pointer;
+        }
+
+        .full .model .footer span {
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>非凡汽车生活馆</h1>
+    <hr>
+    <h2>未缴纳水费</h2>
+    <table>
+        <tr>
+            <th>期数</th>
+            <th>金额</th>
+            <th>状态</th>
+        </tr>
+        <tr>
+            <td>2017-7</td>
+            <td>995</td>
+            <td>未缴</td>
+        </tr>
+        <tr>
+            <td>2017-8</td>
+            <td>491</td>
+            <td>未缴</td>
+        </tr>
+        <tr>
+            <td>合计：</td>
+            <td>1487</td>
+            <td>未缴</td>
+        </tr>
+    </table>
+    <hr>
+    <div class="summsg">
+        <p class="sumrmb">￥87</p>
+        <p>(水费缴纳)</p>
+        <p class="who">
+            <span>户名</span>
+            <span>非凡汽车生活馆</span>
+        </p>
+    </div>
+    <button>微信支付</button>
+    <div class="full">
+        <div class="bk"></div>
+        <div class="model">
+            <div class="header">
+                <p></p>
+                <span>x</span>
+            </div>
+
+            <div class="footer">
+                <span>取消</span>
+                <span>确定</span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="toindex"><a href="./index.html">首页</a> </div> -->
+</body>
+<script>
+    document.querySelector(`button`).addEventListener(`click`, () => {
+        document.querySelector(`.full`).classList.add(`appear`)
+    })
+
+    document.querySelector(`.bk`).addEventListener(`click`, () => {
+        document.querySelector(`.full`).classList.remove(`appear`)
+    })
+    document.querySelector(`.footer :first-child`).addEventListener(`click`, () => {
+
+        document.querySelector(`.full`).classList.remove(`appear`)
+    })
+</script>
+
+</html>
