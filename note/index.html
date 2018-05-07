@@ -76,7 +76,19 @@
             $(`.note-view`).removeClass(`move`)
             back()
         })
-        $(`.add-note`).on(`click touch`,function () {
+        $(`.fa-plus`).on(`click`,function () {
+            if ($(`#notetitle`).val() == "") {
+                return
+            }
+            let timer = new Date()
+            timer = timer.toLocaleDateString()
+            let title = $(`#notetitle`).val()
+            $(`#notetitle`).val(``)
+            save(timer, title)
+            render()
+        }
+        )
+        $(`.add-note`).on(`click`,function () {
             if ($(`#notetitle`).val() == "") {
                 return
             }
