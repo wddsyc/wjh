@@ -76,7 +76,7 @@
             $(`.note-view`).removeClass(`move`)
             back()
         })
-        $(`.add-note`).on(`click`, function () {
+        $(`.add-note`).on(`click touch`,function () {
             if ($(`#notetitle`).val() == "") {
                 return
             }

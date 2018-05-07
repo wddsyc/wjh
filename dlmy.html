@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多亮贸易有限公司</title>
+    <style>
+        /* ul {
+    display: flex;
+    position: absolute;
+    width: 800px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+}
+
+li {
+    position: relative;
+    padding: 20px;
+    font-size: 24px;
+    color: #000;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+    background: skyblue;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #000;
+    transition: 0.2s all linear;
+}
+
+li:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+    border-bottom-color: #000;
+    z-index: -1;
+}
+
+li:hover ~ li::before {
+    left: 0;
+}
+
+li:active {
+    background: #000;
+    color: #fff;
+}
+.hide {
+    display: none;
+}
+.qt {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    top: 250%;
+}
+.qt li{
+    margin-top: 2px;
+} */
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 12px;
+        }
+
+        body {
+            background: #FFF;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav {
+            width: 1170px;
+            height: 200px;
+            margin: 10px auto 0 auto;
+            text-align: center;
+        }
+
+        .nav ul {
+            float: left;
+        }
+
+        /*  一级导航修饰 */
+
+        .nav ul li {
+            float: left;
+            width: 165px;
+            line-height: 40px;
+            position: relative;
+            background-color: #F8F8F8;
+        }
+
+        .nav .nav_first {
+            border-left: 1px dotted #EAEAEA;
+        }
+
+        .nav ul li a {
+            color: #666;
+            display: block;
+            font-family: Microsoft YaHei;
+            border: 1px dotted #EAEAEA;
+            border-left: none;
+        }
+
+        .nav ul li a:hover {
+            color: #000;
+        }
+
+        .nav ul li .active {
+            background-color: #D8450B;
+            border: 1px solid #D8450B;
+            color: #EEE;
+        }
+
+        .nav ul li .active:hover {
+            background-color: #D8450B;
+            color: #EEE;
+        }
+
+        .nav ul li:hover .sub_nav {
+            display: block;
+        }
+
+        .nav .sub_nav {
+            position: absolute;
+            width: 90px;
+            display: none;
+            left: -1px;
+        }
+
+        .nav .sub_nav li {
+            text-align: left;
+            width: 100px;
+        }
+
+        .nav .sub_nav b {
+            width: 15px;
+            background-color: #CCC;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .nav .sub_nav li a {
+            border-top: none;
+        }
+
+        .nav .sub_nav li .sub_nav_last {
+            border-bottom: none;
+        }
+
+        .nav .sub_nav li a:hover b {
+            background-color: #999;
+        }
+
+        .nav .sub_nav li .sub_active {}
+
+        .nav .caret {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            vertical-align: middle;
+            border-top: 4px dashed;
+            border-top: 4px solid \9;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            border-top-color: #777777;
+            margin-left: 5px;
+        }
+
+        .img {
+            margin: 0 auto;
+            width: 1200px;
+        }
+        p {
+            font-size: 20px;
+            margin-left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <ul>
+        <li>用户管理</li>
+        <li>电表管理</li>
+        <li>水表管理</li>
+        <li>记录管理</li>
+        <li>安全退出</li>
+        <li>其他
+            <ul id="qt" class="hide">
+                <li>报表导出</li>
+                <li>操作说明</li>
+                <li>留言板管理</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="jq.js"></script>
+    <script>
+        $(`#qt`).on(`click`,ss)
+        function ss() {
+            $(`#qt`).removeClass(`hide`)
+        }
+      
+    </script> -->
+    <div class="img">
+        <img src="飞虎.jpg" alt="">
+    </div>
+    <div id="nav" class="nav">
+        <ul>
+            <li>
+                <a href="" class="active nav_first">首页</a>
+            </li>
+
+            <li>
+                <a href="">电表管理</a>
+            </li>
+            <li>
+                <a href="">水表管理</a>
+            </li>
+            <li>
+                <a href="">记录查询</a>
+            </li>
+            <li>
+                <a href="">安全退出</a>
+            </li>
+            <li>
+                <a href="">用户管理</a>
+            </li>
+
+            <li>
+                <a href="">其他
+                    <div class="caret"></div>
+                </a>
+                <ul class="sub_nav">
+                    <li>
+                        <a href="" class="sub_active">
+                            <b>&nbsp;</b>報表導出</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <b>&nbsp;</b>操作説明</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <b>&nbsp;</b>留言板管理</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <p>你好管理員1</p>
+</body>
+
+</html>
